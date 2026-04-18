@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shehwar Abdullah — Full Stack Blockchain Developer</title>
+<title>Shehwar Abdullah — RWA Infrastructure Engineer & Full Stack Blockchain Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════ CSS VARIABLES ═══════════════════ */
@@ -250,7 +250,7 @@ nav.scrolled {
 .hero-desc {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto 40px;
   opacity: 0;
   animation: fadeUp 0.8s ease 1.8s forwards;
@@ -441,10 +441,37 @@ section {
   margin-bottom: 24px;
 }
 
-.about-stats {
+/* Focus areas grid */
+.focus-areas {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.focus-item {
+  padding: 14px 10px;
+  border: 1px solid rgba(179,71,255,0.12);
+  background: rgba(179,71,255,0.03);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.focus-item:hover {
+  border-color: var(--neon-purple);
+  background: rgba(179,71,255,0.08);
+  color: var(--text-primary);
+  box-shadow: var(--glow-purple);
+  transform: translateY(-2px);
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  width: 100%;
 }
 .stat-box {
   text-align: center;
@@ -537,6 +564,10 @@ section {
 .skill-chip.purple { border-color: rgba(179,71,255,0.15); }
 .skill-chip.purple::before { background: var(--neon-purple); }
 .skill-chip.purple:hover { border-color: var(--neon-purple); background: rgba(179,71,255,0.08); box-shadow: var(--glow-purple); }
+
+.skill-chip.orange { border-color: rgba(255,107,45,0.15); }
+.skill-chip.orange::before { background: var(--neon-orange); }
+.skill-chip.orange:hover { border-color: var(--neon-orange); background: rgba(255,107,45,0.08); box-shadow: 0 0 20px rgba(255,107,45,0.3); }
 
 /* ═══════════════════ EXPERIENCE SECTION ═══════════════════ */
 #experience { background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary)); }
@@ -662,6 +693,31 @@ section {
 }
 .project-card:hover::before { transform: scaleX(1); }
 
+.project-card.featured {
+  grid-column: 1 / -1;
+  border-color: rgba(179,71,255,0.15);
+}
+.project-card.featured::before {
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan), var(--neon-green));
+}
+.project-card.featured:hover {
+  border-color: rgba(179,71,255,0.3);
+  box-shadow: var(--glow-purple);
+}
+
+.featured-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--neon-purple);
+  border: 1px solid rgba(179,71,255,0.3);
+  background: rgba(179,71,255,0.08);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
 .project-header {
   padding: 30px 30px 0;
   display: flex;
@@ -678,6 +734,7 @@ section {
   font-size: 1.4rem;
 }
 
+.project-links { display: flex; gap: 16px; }
 .project-links a {
   color: var(--text-dim);
   text-decoration: none;
@@ -724,8 +781,60 @@ section {
   letter-spacing: 0.5px;
 }
 
+/* ═══════════════════ SERVICES SECTION ═══════════════════ */
+#services { background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary)); }
+
+.services-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  padding: 28px 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(0,255,136,0.08);
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 2px;
+  background: var(--neon-green);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.service-card:hover {
+  border-color: rgba(0,255,136,0.2);
+  box-shadow: var(--glow-green);
+  transform: translateY(-4px);
+}
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.service-card p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
 /* ═══════════════════ CERTIFICATIONS ═══════════════════ */
-#certs { background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary)); }
+#certs { background: var(--bg-secondary); }
 
 .certs-grid {
   max-width: 1000px;
@@ -778,9 +887,16 @@ section {
   font-size: 0.8rem;
   color: var(--text-dim);
 }
+.cert-skills {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.cert-skills strong { color: var(--text-secondary); }
 
 /* ═══════════════════ EDUCATION ═══════════════════ */
-#education { background: var(--bg-secondary); }
+#education { background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary)); }
 
 .edu-card {
   max-width: 600px;
@@ -826,7 +942,7 @@ section {
 
 /* ═══════════════════ CONTACT SECTION ═══════════════════ */
 #contact {
-  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+  background: var(--bg-primary);
   text-align: center;
 }
 
@@ -882,7 +998,6 @@ footer .neon { color: var(--neon-cyan); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Glitch effect for hero name on hover */
 .hero-name:hover .neon-text {
   animation: glitch 0.3s ease;
 }
@@ -914,12 +1029,21 @@ footer .neon { color: var(--neon-cyan); }
   section { padding: 70px 20px; }
   #hero { padding: 100px 20px 60px; }
 
-  .about-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+  .focus-areas { grid-template-columns: repeat(2, 1fr); }
 
   .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: 1; }
   .certs-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
 
   .hero-btns { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 480px) {
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+  .focus-areas { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -942,6 +1066,7 @@ footer .neon { color: var(--neon-cyan); }
     <li><a href="#skills" onclick="closeNav()">Skills</a></li>
     <li><a href="#experience" onclick="closeNav()">Experience</a></li>
     <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+    <li><a href="#services" onclick="closeNav()">Services</a></li>
     <li><a href="#certs" onclick="closeNav()">Certs</a></li>
     <li><a href="#contact" onclick="closeNav()">Contact</a></li>
   </ul>
@@ -962,7 +1087,8 @@ footer .neon { color: var(--neon-cyan); }
     </div>
     <p class="hero-desc">
       Co-Founder of ZeroWaveLabs — Building secure, scalable decentralized solutions 
-      with Hyperledger Fabric, Solana, React.js & Node.js for the Web3 ecosystem.
+      with Hyperledger Fabric, Solana, DAML & Canton Network, React.js & Node.js. 
+      Bridging emerging market assets with global capital through compliant blockchain infrastructure.
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn-neon filled">View Projects</a>
@@ -979,28 +1105,43 @@ footer .neon { color: var(--neon-cyan); }
     <div class="section-line"></div>
   </div>
   <div class="about-grid">
-    <div class="reveal">
-    </div>
     <div class="about-text reveal">
-      <h3>Full Stack Blockchain Developer & Architect</h3>
+      <h3>RWA Infrastructure Engineer & Full Stack Blockchain Developer</h3>
       <p>
-        Co-Founder of ZeroWaveLabs, specializing in Blockchain architecture and full-stack engineering. 
-        I leverage Python, Node.js, and React.js to build secure, scalable decentralized solutions. 
-        My focus is on transforming complex technical requirements into high-performance products 
-        that drive the Web3 ecosystem forward — from Solana token platforms to enterprise Hyperledger networks.
+        Co-Founder of ZeroWaveLabs, specializing in building infrastructure for Real World Asset (RWA) tokenization, 
+        with a focus on real estate and commodity-backed digital assets. My work spans both public blockchain systems 
+        (Solidity, ERC-1400, ERC-3643) and institutional digital asset platforms using DAML and the Canton Network. 
+        I am particularly interested in designing compliant tokenization architectures suitable for regulated financial environments.
       </p>
+      <p>
+        My goal is to bridge emerging market assets with global capital through secure, compliant blockchain infrastructure.
+      </p>
+
+      <div class="focus-areas reveal">
+        <div class="focus-item">Fractional Real Estate Tokenization</div>
+        <div class="focus-item">Commodity-Backed Digital Assets</div>
+        <div class="focus-item">Yield Distribution Smart Contracts</div>
+        <div class="focus-item">Institutional Asset Workflows (DAML)</div>
+        <div class="focus-item">Security Token Standards</div>
+        <div class="focus-item">RWA System Architecture</div>
+      </div>
+
       <div class="about-stats">
         <div class="stat-box">
           <div class="stat-number">2.5+</div>
           <div class="stat-label">Years Exp</div>
         </div>
         <div class="stat-box">
-          <div class="stat-number">3+</div>
+          <div class="stat-number">4+</div>
           <div class="stat-label">Projects</div>
         </div>
         <div class="stat-box">
           <div class="stat-number">5+</div>
           <div class="stat-label">Certs</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">1.5K+</div>
+          <div class="stat-label">Followers</div>
         </div>
       </div>
     </div>
@@ -1020,20 +1161,27 @@ footer .neon { color: var(--neon-cyan); }
       <div class="skills-grid">
         <span class="skill-chip">Hyperledger Fabric</span>
         <span class="skill-chip">Solana / SPL</span>
+        <span class="skill-chip">Solidity</span>
+        <span class="skill-chip">DAML</span>
+        <span class="skill-chip">Canton Network</span>
         <span class="skill-chip">Smart Contracts</span>
         <span class="skill-chip">DApps</span>
         <span class="skill-chip">DeFi</span>
         <span class="skill-chip">RWA & Tokenization</span>
+        <span class="skill-chip">ERC-1400</span>
+        <span class="skill-chip">ERC-3643</span>
+        <span class="skill-chip">Security Token Standards</span>
         <span class="skill-chip">DLT</span>
         <span class="skill-chip">Blockchain Architecture</span>
         <span class="skill-chip">Cryptography</span>
+        <span class="skill-chip">Blockchain Analysis</span>
       </div>
     </div>
     <div class="skill-category reveal">
       <h3 class="skill-cat-title">⬡ Languages & Frameworks</h3>
       <div class="skills-grid">
-        <span class="skill-chip green">Go (Golang)</span>
         <span class="skill-chip green">Python</span>
+        <span class="skill-chip green">Go (Golang)</span>
         <span class="skill-chip green">Node.js / Express</span>
         <span class="skill-chip green">React.js</span>
         <span class="skill-chip green">Vite</span>
@@ -1051,7 +1199,19 @@ footer .neon { color: var(--neon-cyan); }
         <span class="skill-chip purple">MySQL</span>
         <span class="skill-chip purple">Certificate Authorities</span>
         <span class="skill-chip purple">TLS / PKI</span>
+        <span class="skill-chip purple">Public Key Infrastructure</span>
         <span class="skill-chip purple">Git / GitHub</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <h3 class="skill-cat-title">⬡ Domain Expertise</h3>
+      <div class="skills-grid">
+        <span class="skill-chip orange">FinTech</span>
+        <span class="skill-chip orange">Asset Management</span>
+        <span class="skill-chip orange">AML / KYC Compliance</span>
+        <span class="skill-chip orange">Regulatory Infrastructure</span>
+        <span class="skill-chip orange">Decentralized Applications (DApps)</span>
+        <span class="skill-chip orange">AI / ML Workflows</span>
       </div>
     </div>
   </div>
@@ -1069,13 +1229,14 @@ footer .neon { color: var(--neon-cyan); }
       <div class="timeline-dot"></div>
       <div class="timeline-date">SEP 2023 — PRESENT</div>
       <div class="timeline-card">
-        <h3>Co-Founder</h3>
+        <h3>Co-Founder & RWA Infrastructure Engineer</h3>
         <div class="company">ZeroWaveLabs</div>
         <div class="location">Islamabad, Pakistan · Hybrid</div>
         <p>
           Specializing in Blockchain architecture and full-stack engineering — building secure, 
           scalable decentralized solutions with Python, Node.js, React.js, Hyperledger Fabric, 
-          and Go. Leading Web3 product strategy and startup operations.
+          Solidity, DAML, and Go. Leading Web3 product strategy, RWA tokenization infrastructure, 
+          and startup operations. Designing compliant tokenization architectures for regulated financial environments.
         </p>
       </div>
     </div>
@@ -1103,6 +1264,36 @@ footer .neon { color: var(--neon-cyan); }
     <div class="section-line"></div>
   </div>
   <div class="projects-grid">
+
+    <!-- Project: CARA (Featured - from LinkedIn) -->
+    <div class="project-card featured reveal">
+      <div class="project-header">
+        <div class="project-icon">🛡️</div>
+        <div class="project-links">
+          <a href="https://github.com/shehwarabdullah/cara-dapp" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="featured-badge">★ Featured Project</div>
+        <h3>CARA — Confidential Audit & Regulatory Assistant</h3>
+        <div class="project-date">FEB 2025 — PRESENT</div>
+        <p>
+          A privacy-preserving regulatory compliance infrastructure layer for the Canton Network. 
+          CARA enables financial institutions to automate AML/KYC compliance checks, generate verifiable 
+          regulatory reports, and maintain audit trails — all while preserving data confidentiality 
+          through the Canton Network's privacy-by-design architecture.
+        </p>
+        <div class="project-tags">
+          <span>DAML</span>
+          <span>Canton Network</span>
+          <span>AML/KYC</span>
+          <span>Privacy-Preserving</span>
+          <span>Regulatory Compliance</span>
+          <span>DApp</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Project 1: One Health Global -->
     <div class="project-card reveal">
       <div class="project-header">
@@ -1182,38 +1373,82 @@ footer .neon { color: var(--neon-cyan); }
   </div>
 </section>
 
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services">
+  <div class="section-header reveal">
+    <p class="section-label">05. what i offer</p>
+    <h2 class="section-title">SERV<span class="accent">ICES</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">💻</div>
+      <h3>Custom Software Development</h3>
+      <p>Full-stack blockchain & web solutions</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔗</div>
+      <h3>Web Development</h3>
+      <p>Modern React.js & Node.js applications</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📊</div>
+      <h3>Financial Analysis</h3>
+      <p>Data-driven insights for digital assets</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🏛️</div>
+      <h3>Financial Consulting</h3>
+      <p>Tokenization & DeFi strategy advisory</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔧</div>
+      <h3>IT Consulting</h3>
+      <p>Blockchain architecture & infrastructure</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📁</div>
+      <h3>Enterprise Content Management</h3>
+      <p>Scalable content systems & workflows</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
 <section id="certs">
   <div class="section-header reveal">
-    <p class="section-label">05. credentials</p>
+    <p class="section-label">06. credentials</p>
     <h2 class="section-title">CERTIFIC<span class="accent">ATIONS</span></h2>
     <div class="section-line"></div>
   </div>
   <div class="certs-grid">
     <div class="cert-card reveal">
       <div class="cert-issuer">University of Pennsylvania</div>
-      <h3>Cryptocurrency and Blockchain: An Introduction to Digital Currencies</h3>
+      <h3>Lending, Crowdfunding, and Modern Investing</h3>
       <div class="cert-date">Issued Jan 2026</div>
+      <div class="cert-skills"><strong>Skills:</strong> FinTech, Asset Management</div>
     </div>
     <div class="cert-card reveal">
       <div class="cert-issuer">University of Pennsylvania</div>
-      <h3>Lending, Crowdfunding, and Modern Investing</h3>
+      <h3>Cryptocurrency and Blockchain: An Introduction to Digital Currencies</h3>
       <div class="cert-date">Issued Jan 2026</div>
     </div>
     <div class="cert-card reveal">
       <div class="cert-issuer">Duke University</div>
       <h3>Decentralized Finance (DeFi) Primitives</h3>
       <div class="cert-date">Issued Jan 2026</div>
+      <div class="cert-skills"><strong>Skills:</strong> FinTech, Public Key Infrastructure</div>
     </div>
     <div class="cert-card reveal">
       <div class="cert-issuer">Duke University</div>
       <h3>Decentralized Finance (DeFi) Infrastructure</h3>
       <div class="cert-date">Issued Jan 2026</div>
+      <div class="cert-skills"><strong>Skills:</strong> Blockchain Analysis, DApps</div>
     </div>
     <div class="cert-card reveal">
       <div class="cert-issuer">101 Blockchains</div>
       <h3>Blockchain Fundamentals</h3>
-      <div class="cert-date">Issued Oct 2025</div>
+      <div class="cert-date">Issued Oct 2025 · Expires Oct 2026</div>
     </div>
   </div>
 </section>
@@ -1221,7 +1456,7 @@ footer .neon { color: var(--neon-cyan); }
 <!-- ═══════════════ EDUCATION ═══════════════ -->
 <section id="education">
   <div class="section-header reveal">
-    <p class="section-label">06. academics</p>
+    <p class="section-label">07. academics</p>
     <h2 class="section-title">EDUCA<span class="accent">TION</span></h2>
     <div class="section-line"></div>
   </div>
@@ -1237,12 +1472,12 @@ footer .neon { color: var(--neon-cyan); }
 <!-- ═══════════════ CONTACT ═══════════════ -->
 <section id="contact">
   <div class="section-header reveal">
-    <p class="section-label">07. let's connect</p>
+    <p class="section-label">08. let's connect</p>
     <h2 class="section-title">GET IN <span class="accent">TOUCH</span></h2>
     <div class="section-line"></div>
   </div>
   <p class="reveal" style="color:var(--text-secondary); max-width:550px; margin:0 auto 40px; font-size:1.05rem;">
-    Interested in blockchain architecture, Web3 development, or collaboration? Let's build something together.
+    Interested in blockchain architecture, RWA tokenization, Web3 development, or collaboration? Let's build something together.
   </p>
   <div class="contact-links reveal">
     <a href="https://github.com/shehwarabdullah" target="_blank" class="contact-btn">
@@ -1256,6 +1491,10 @@ footer .neon { color: var(--neon-cyan); }
     <a href="mailto:Shehwarabdullah367@gmail.com" class="contact-btn">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       Email
+    </a>
+    <a href="https://shehwarabdullah.github.io/" target="_blank" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      Portfolio
     </a>
   </div>
 </section>
@@ -1306,7 +1545,6 @@ class Node {
     if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
     this.pulsePhase += this.pulseSpeed;
 
-    // Mouse repulsion
     if (mouse.x !== null) {
       const dx = this.x - mouse.x;
       const dy = this.y - mouse.y;
@@ -1323,19 +1561,14 @@ class Node {
     ctx.globalAlpha = this.alpha * pulse;
 
     if (this.isBlock) {
-      // Draw as a mini blockchain block
       const s = this.size;
       ctx.strokeStyle = this.color;
       ctx.lineWidth = 1;
       ctx.strokeRect(this.x - s/2, this.y - s/2, s, s);
-
-      // Inner hash lines
       ctx.beginPath();
       ctx.moveTo(this.x - s/4, this.y);
       ctx.lineTo(this.x + s/4, this.y);
       ctx.stroke();
-
-      // Glow
       ctx.shadowColor = this.color;
       ctx.shadowBlur = 8;
       ctx.strokeRect(this.x - s/2, this.y - s/2, s, s);
@@ -1373,7 +1606,6 @@ function drawConnections() {
         ctx.lineTo(nodes[j].x, nodes[j].y);
         ctx.stroke();
 
-        // Occasionally animate a "transaction" along the chain
         if (nodes[i].isBlock && nodes[j].isBlock && dist < 100) {
           ctx.strokeStyle = `rgba(179,71,255,${alpha * 1.5})`;
           ctx.lineWidth = 1;
@@ -1399,9 +1631,11 @@ animate();
 
 // ═══════════════ TYPING EFFECT ═══════════════
 const phrases = [
+  'RWA Infrastructure Engineer',
   'Full Stack Blockchain Developer',
   'Hyperledger Fabric Architect',
   'Solana & Web3 Builder',
+  'DAML & Canton Network Developer',
   'Co-Founder @ ZeroWaveLabs',
   'RWA & Tokenization Specialist',
   'DeFi Infrastructure Engineer'
