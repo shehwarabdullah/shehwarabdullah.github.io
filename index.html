@@ -174,6 +174,17 @@ section { position: relative; z-index: 1; padding: 100px 40px; }
 .canton-feature-list li::before { content: '▸'; color: var(--canton-gold); font-weight: bold; }
 .canton-feature-list li:last-child { border-bottom: none; }
 
+/* SAWAX — solar-themed featured card variant */
+.project-card.sawax-featured { grid-column: 1 / -1; border: 2px solid rgba(255,180,0,0.22); background: linear-gradient(135deg, rgba(255,180,0,0.05), rgba(0,240,255,0.03), var(--bg-card)); }
+.project-card.sawax-featured::before { background: linear-gradient(90deg, #ffb400, var(--neon-green), #ffb400); height: 4px; transform: scaleX(1); }
+.project-card.sawax-featured:hover { border-color: rgba(255,180,0,0.42); box-shadow: 0 0 20px rgba(255,180,0,0.25), 0 0 40px rgba(255,180,0,0.1); transform: translateY(-10px); }
+.sawax-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; font-family: var(--font-display); font-size: 0.65rem; color: #ffb400; border: 1px solid rgba(255,180,0,0.35); background: rgba(255,180,0,0.09); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; text-shadow: 0 0 12px rgba(255,180,0,0.4); }
+.sawax-badge::before { content: '☀'; font-size: 0.75rem; animation: dotPulse 2s ease-in-out infinite; }
+.sawax-feature-list { list-style: none; padding: 0; }
+.sawax-feature-list li { padding: 10px 0; border-bottom: 1px solid rgba(255,180,0,0.07); font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+.sawax-feature-list li::before { content: '▸'; color: #ffb400; font-weight: bold; }
+.sawax-feature-list li:last-child { border-bottom: none; }
+
 .project-header { padding: 30px 30px 0; display: flex; justify-content: space-between; align-items: flex-start; }
 .project-icon { width: 50px; height: 50px; border: 1px solid rgba(0,240,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
 .project-links { display: flex; gap: 16px; }
@@ -186,6 +197,7 @@ section { position: relative; z-index: 1; padding: 100px 40px; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .project-tags span { padding: 4px 12px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--neon-cyan); border: 1px solid rgba(0,240,255,0.15); letter-spacing: 0.5px; }
 .project-tags span.canton-tag { color: var(--canton-gold); border-color: rgba(240,192,64,0.25); background: rgba(240,192,64,0.05); }
+.project-tags span.sawax-tag { color: #ffb400; border-color: rgba(255,180,0,0.28); background: rgba(255,180,0,0.06); }
 
 #services { background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary)); }
 .services-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
@@ -242,7 +254,8 @@ footer .neon { color: var(--canton-gold); }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .canton-banner-items { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: 1fr; }
-  .project-card.canton-featured { grid-column: 1; }
+  .project-card.canton-featured,
+  .project-card.sawax-featured { grid-column: 1; }
   .canton-featured-layout { grid-template-columns: 1fr; }
   .canton-featured-left { border-right: none; border-bottom: 1px solid rgba(240,192,64,0.1); }
   .certs-grid { grid-template-columns: 1fr; }
@@ -338,7 +351,7 @@ footer .neon { color: var(--canton-gold); }
         <div class="stat-box"><div class="stat-number">2.5+</div><div class="stat-label">Years Exp</div></div>
         <div class="stat-box"><div class="stat-number">4+</div><div class="stat-label">Projects</div></div>
         <div class="stat-box"><div class="stat-number">5+</div><div class="stat-label">Certs</div></div>
-        <div class="stat-box"><div class="stat-number">1.5K+</div><div class="stat-label">Followers</div></div>
+        <div class="stat-box"><div class="stat-number">2K+</div><div class="stat-label">Followers</div></div>
       </div>
     </div>
   </div>
@@ -461,6 +474,8 @@ footer .neon { color: var(--canton-gold); }
     <div class="section-line"></div>
   </div>
   <div class="projects-grid">
+
+    <!-- CARA — Canton Network Flagship -->
     <div class="project-card canton-featured reveal">
       <div class="canton-featured-layout">
         <div class="canton-featured-left">
@@ -499,6 +514,46 @@ footer .neon { color: var(--canton-gold); }
       </div>
     </div>
 
+    <!-- SAWAX — Solar Asset Tokenization Infrastructure -->
+    <div class="project-card sawax-featured reveal">
+      <div class="canton-featured-layout">
+        <div class="canton-featured-left" style="border-right:1px solid rgba(255,180,0,0.12);">
+          <div class="sawax-badge">RWA · Renewable Energy</div>
+          <h3 style="font-family:var(--font-display);font-size:1.4rem;letter-spacing:2px;color:var(--text-primary);margin-bottom:6px;">SAWAX — Solar Asset Tokenization Infrastructure</h3>
+          <div class="project-date" style="color:#ffb400;">JAN 2025 — PRESENT</div>
+          <p style="color:var(--text-secondary);font-size:0.95rem;margin-top:14px;line-height:1.7;">
+            A next-generation real-world asset (RWA) tokenization platform focused on renewable energy infrastructure, enabling fractional ownership and institutional-grade settlement for solar farm investments. Built with privacy-preserving architecture for regulated financial environments, SAWAX leverages the Canton Network and DAML smart contracts to support compliant asset issuance, investor onboarding, automated settlements, and transparent auditability.
+          </p>
+          <div class="project-tags" style="margin-top:20px;">
+            <span class="sawax-tag">Canton Network</span>
+            <span class="sawax-tag">RWA Tokenization</span>
+            <span class="sawax-tag">Solar Infrastructure</span>
+            <span class="sawax-tag">DAML</span>
+            <span class="sawax-tag">Institutional Finance</span>
+            <span class="sawax-tag">Fiat Settlement</span>
+            <span class="sawax-tag">AML/KYC</span>
+            <span class="sawax-tag">Privacy-Preserving</span>
+          </div>
+        </div>
+        <div class="canton-featured-right">
+          <h4 style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:3px;color:#ffb400;margin-bottom:16px;text-transform:uppercase;">Key Capabilities</h4>
+          <ul class="sawax-feature-list">
+            <li>Fractional solar farm ownership tokenization</li>
+            <li>Institutional-grade RWA infrastructure</li>
+            <li>Fiat-backed settlement workflows</li>
+            <li>DAML smart contract automation</li>
+            <li>Privacy-preserving investor transactions</li>
+            <li>Automated compliance & KYC/AML architecture</li>
+            <li>Verifiable audit trail generation</li>
+            <li>Canton Network native integration</li>
+            <li>Asset lifecycle & revenue distribution</li>
+            <li>Multi-party regulatory coordination support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- One Health Global Fabric Network -->
     <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon">⛓️</div>
@@ -514,6 +569,7 @@ footer .neon { color: var(--canton-gold); }
       </div>
     </div>
 
+    <!-- SolForge Launchpad -->
     <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon">🪙</div>
@@ -529,6 +585,7 @@ footer .neon { color: var(--canton-gold); }
       </div>
     </div>
 
+    <!-- BhaiJaan Welfare Organization -->
     <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon">🌍</div>
@@ -543,6 +600,7 @@ footer .neon { color: var(--canton-gold); }
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
